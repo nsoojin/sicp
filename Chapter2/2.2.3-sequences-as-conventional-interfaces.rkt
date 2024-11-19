@@ -44,15 +44,15 @@
 
 (sum-odd-squares (list 1 (list 2 (list 4 5) 1)))
 
-(define (even-fibs n)
-  (accumulate
-   cons ()
-   (filter even? (map fib (enumerate-interval 0 n)))))
+;(define (even-fibs n)
+;  (accumulate
+;   cons nil
+;   (filter even? (map fib (enumerate-interval 0 n)))))
 
 ; Exercise 2.33
 
 (define (map p sequence)
-  (accumulate (lambda (x y) (cons (p x) y)) nil sequence)))
+  (accumulate (lambda (x y) (cons (p x) y)) nil sequence))
 
 (define (append seq1 seq2)
   (accumulate cons seq2 seq1))
@@ -73,6 +73,5 @@
                              (count-leaves x)
                              1))
                        t)))
-
 
    
